@@ -40,6 +40,6 @@ directory_firewalld_services:
       - module: service_firewalld # restart service
     - context:
         name: {{ s_name }}
-        service: {{ v }}
+        service: {{ v|json }}
 
 {% endfor %}

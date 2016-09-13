@@ -37,6 +37,6 @@ directory_firewalld_zones:
       - module: service_firewalld   # restart service
     - context:
         name: {{ z_name }}
-        zone: {{ v }}
+        zone: {{ v|json }}
 
 {% endfor %}
