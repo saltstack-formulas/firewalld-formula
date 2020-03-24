@@ -83,8 +83,9 @@
   {%- endfor %}
 {%- endif %}
 
-{%- if 'rich_rules' in zone %}
-  {%- for rule in zone.rich_rules %}
+{%- for k,val in zone.items() %}
+{%- if k.endswith("rich_rules") %}
+  {%- for rule in val %}
   {%- if 'family' in rule %}
   <rule family="{{ rule.family }}">
   {%- else %}
@@ -151,4 +152,5 @@
   </rule>
   {%- endfor %}
 {%- endif %}
+{%- endfor %}
 </zone>
