@@ -1,0 +1,161 @@
+# yamllint disable rule:indentation rule:line-length
+# Fedora-32
+---
+values:
+  firewalld:
+    AllowZoneDrifting: 'no'
+    AutomaticHelpers: system
+    FirewallBackend: nftables
+    FlushAllOnReload: 'yes'
+    IndividualCalls: 'no'
+    LogDenied: 'off'
+    RFC3964_IPv4: 'yes'
+    arch: amd64
+    backend:
+      manage: true
+      pkg: nftables
+    config: /etc/firewalld.conf
+    default_zone: public
+    direct:
+      chain:
+        MYCHAIN:
+          ipv: ipv4
+          table: raw
+      passthrough:
+        MYPASSTHROUGH:
+          args: -t raw -A MYCHAIN -j DROP
+          ipv: ipv4
+      rule:
+        INTERNETACCESS:
+          args: -i iintern -o iextern -s 192.168.1.0/24 -m conntrack --ctstate NEW,RELATED,ESTABLISHED
+            -j ACCEPT
+          chain: FORWARD
+          ipv: ipv4
+          priority: '0'
+          table: filter
+    enabled: true
+    ipset:
+      manage: true
+      pkg: ipset
+    ipsets:
+      fail2ban-ssh:
+        description: fail2ban-ssh ipset
+        entries:
+        - 10.0.0.1
+        options:
+          hashsize:
+          - 1024
+          maxelem:
+          - 65536
+          timeout:
+          - 300
+        short: fail2ban-ssh
+        type: hash:ip
+      fail2ban-ssh-ipv6:
+        description: fail2ban-ssh-ipv6 ipset
+        entries:
+        - 2a01::1
+        options:
+          family:
+          - inet6
+          hashsize:
+          - 1024
+          maxelem:
+          - 65536
+          timeout:
+          - 300
+        short: fail2ban-ssh-ipv6
+        type: hash:ip
+    package: firewalld
+    service: firewalld
+    services:
+      salt-minion:
+        description: salt-minion
+        ports:
+          tcp:
+          - '8000'
+        short: salt-minion
+      sshcustom:
+        description: SSH on port 3232 and 5252. Secure Shell (SSH) is a protocol for
+          logging into and executing commands on remote machines. It provides secure
+          encrypted communications. If you plan on accessing your machine remotely
+          via SSH over a firewalled interface, enable this option. You need the openssh-server
+          package installed for this option to be useful.
+        destinations:
+          ipv4:
+          - 224.0.0.251
+          - 224.0.0.252
+          ipv6:
+          - ff02::fb
+          - ff02::fc
+        modules:
+        - some_module_to_load
+        ports:
+          tcp:
+          - 3232
+          - 5252
+        protocols:
+        - igmp
+        short: sshcustom
+        source_ports:
+          tcp:
+          - 21
+      zabbixcustom:
+        description: zabbix custom rule
+        ports:
+          tcp:
+          - '10051'
+        short: Zabbixcustom
+    zones:
+      public:
+        description: For use in public areas. You do not trust the other computers
+          on networks to not harm your computer. Only selected incoming connections
+          are accepted.
+        other_services:
+        - zabbixcustom
+        ports:
+        - comment: zabbix-agent
+          port: 10050
+          protocol: tcp
+        - comment: bacula-client
+          port: 9102
+          protocol: tcp
+        - comment: vsftpd
+          port: 21
+          protocol: tcp
+        protocols:
+        - igmp
+        rich_rules:
+        - accept: true
+          family: ipv4
+          source:
+            address: 8.8.8.8/24
+        - family: ipv4
+          ipset:
+            name: fail2ban-ssh
+          reject:
+            type: icmp-port-unreachable
+        services:
+        - http
+        - https
+        - ssh
+        - salt-minion
+        short: Public
+        source_ports:
+        - comment: something
+          port: 2222
+          protocol: tcp
+        - comment: something_else
+          port: 4444
+          protocol: tcp
+      rich_public:
+        description: Example
+        rich_rules:
+          ssh-csg:
+            accept: true
+            ipsets:
+            - fail2ban-ssh
+            - other-ipset
+            services:
+            - ssh
+        short: rich_public
