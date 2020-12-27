@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.1.1](https://github.com/saltstack-formulas/firewalld-formula/compare/v1.1.0...v1.1.1) (2020-12-27)
+
+
+### Continuous Integration
+
+* **commitlint:** ensure `upstream/master` uses main repo URL [skip ci] ([a615af1](https://github.com/saltstack-formulas/firewalld-formula/commit/a615af103e7a9d89b05e8e7a4f9d139ec112c599))
+* **gitlab-ci:** add `rubocop` linter (with `allow_failure`) [skip ci] ([472a16c](https://github.com/saltstack-formulas/firewalld-formula/commit/472a16c283f60f84acc25846ef03da346c0a2cc5))
+* **gitlab-ci:** use GitLab CI as Travis CI replacement ([a88d749](https://github.com/saltstack-formulas/firewalld-formula/commit/a88d749499a613299dcb688f97aad9af97221ec6))
+
+
+### Tests
+
+* **_mapdata:** generate verification files ([7665d77](https://github.com/saltstack-formulas/firewalld-formula/commit/7665d77f67749722d5b3d8ef73aa75ede034d365))
+* **map:** verify `map.jinja` dump using `_mapdata` state ([22869e0](https://github.com/saltstack-formulas/firewalld-formula/commit/22869e0c7fa5ae6c7f8d354d4302cb945202347a))
+
 # [1.1.0](https://github.com/saltstack-formulas/firewalld-formula/compare/v1.0.0...v1.1.0) (2020-10-24)
 
 
