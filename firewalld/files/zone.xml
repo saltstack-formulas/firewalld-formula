@@ -60,7 +60,7 @@
     <audit>{%- if 'limit' in rule.audit %} <limit value="{{ rule.audit.limit }}"/>{%- endif %}</audit>
   {%- endif %}
   {%- if 'accept' in rule %}
-    <accept/>
+    <accept>{%- if rule.accept is mapping and 'limit' in rule.accept %} <limit value="{{ rule.accept.limit }}"/>{%- endif %}</accept>
   {%- endif %}
   {%- if 'reject' in rule %}
     <reject{%- if 'type' in rule.reject %} type="{{ rule.reject.type }}"{%- endif %} />
