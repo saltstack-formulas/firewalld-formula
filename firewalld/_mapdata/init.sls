@@ -6,9 +6,7 @@
 {%- from tplroot ~ "/map.jinja" import firewalld with context %}
 
 {%- set _mapdata = {
-      "values": {
-        "firewalld": firewalld,
-      }
+      "values": firewalld,
     } %}
 {%- do salt["log.debug"]("### MAP.JINJA DUMP ###\n" ~ _mapdata | yaml(False)) %}
 
