@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.2](https://github.com/saltstack-formulas/firewalld-formula/compare/v1.1.1...v1.1.2) (2021-01-14)
+
+
+### Bug Fixes
+
+* **_mapdata:** ensure map data is directly under `values` ([a29e81b](https://github.com/saltstack-formulas/firewalld-formula/commit/a29e81bac6febaf89859972a08c11cf6bda67a3f))
+
+
+### Tests
+
+* **_mapdata:** update for `_mapdata/init.sls` change ([a647d6d](https://github.com/saltstack-formulas/firewalld-formula/commit/a647d6d9a3d703e113d4e5eab480d43e9b0322c8))
+
 ## [1.1.1](https://github.com/saltstack-formulas/firewalld-formula/compare/v1.1.0...v1.1.1) (2020-12-27)
 
 
