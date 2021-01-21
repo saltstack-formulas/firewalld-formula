@@ -37,6 +37,13 @@ control 'zones/public.xml configuration' do
             <source ipset="fail2ban-ssh" />
             <reject type="icmp-port-unreachable" />
           </rule>
+          <rule>
+            <service name="http" />
+            <log prefix="http fw limit 3/m" level="warning">
+              <limit value="3/m"/>
+            </log>
+            <accept> <limit value="3/m"/></accept>
+          </rule>
         </zone>
       ZONE_XML
     end
