@@ -2,6 +2,28 @@
 Changelog
 =========
 
+`1.2.0 <https://github.com/saltstack-formulas/firewalld-formula/compare/v1.1.2...v1.2.0>`_ (2021-02-05)
+-----------------------------------------------------------------------------------------------------------
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **pre-commit:** update hook for ``rubocop`` [skip ci] (\ `a649d87 <https://github.com/saltstack-formulas/firewalld-formula/commit/a649d8763c92b25a4e1644caf37af4aabb688e03>`_\ )
+
+Features
+^^^^^^^^
+
+
+* **pillar.example,test/:** add example and test for richrule ratelimit (\ `f258526 <https://github.com/saltstack-formulas/firewalld-formula/commit/f25852637a7aeb8608b4618b952407b59b0dbf7e>`_\ )
+* **zone.xml:** allow to rate limit 'accept' in rich rules (\ `a2f4f3b <https://github.com/saltstack-formulas/firewalld-formula/commit/a2f4f3b36e3295311128673f33f90c93de24288d>`_\ )
+
+Tests
+^^^^^
+
+
+* **share:** standardise with latest changes [skip ci] (\ `7df88b9 <https://github.com/saltstack-formulas/firewalld-formula/commit/7df88b9e893f93be1b24de77338fdee0c1c8727c>`_\ )
+
 `1.1.2 <https://github.com/saltstack-formulas/firewalld-formula/compare/v1.1.1...v1.1.2>`_ (2021-01-14)
 -----------------------------------------------------------------------------------------------------------
 
