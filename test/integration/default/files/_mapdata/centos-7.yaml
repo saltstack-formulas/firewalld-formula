@@ -134,6 +134,13 @@ values:
           name: fail2ban-ssh
         reject:
           type: icmp-port-unreachable
+      - accept:
+          limit: "3/m"
+        log:
+          level: warning
+          limit: "3/m"
+          prefix: "http fw limit 3/m"
+        service: http
       services:
       - http
       - https

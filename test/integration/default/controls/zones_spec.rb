@@ -31,11 +31,18 @@ control 'zones/public.xml configuration' do
           <source-port port="4444" protocol="tcp" />
           <rule family="ipv4">
             <source address="8.8.8.8/24" />
-            <accept/>
+            <accept></accept>
           </rule>
           <rule family="ipv4">
             <source ipset="fail2ban-ssh" />
             <reject type="icmp-port-unreachable" />
+          </rule>
+          <rule>
+            <service name="http" />
+            <log prefix="http fw limit 3/m" level="warning">
+              <limit value="3/m"/>
+            </log>
+            <accept> <limit value="3/m"/></accept>
           </rule>
         </zone>
       ZONE_XML
@@ -59,12 +66,12 @@ control 'zones/rich_public.xml configuration' do
           <rule>
             <source ipset="fail2ban-ssh" />
             <service name="ssh" />
-            <accept/>
+            <accept></accept>
           </rule>
           <rule>
             <source ipset="other-ipset" />
             <service name="ssh" />
-            <accept/>
+            <accept></accept>
           </rule>
         </zone>
       ZONE_XML
