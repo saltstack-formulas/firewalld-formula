@@ -14,10 +14,10 @@
     <source ipset="{{ rule.ipset.name }}" />
   {%- endif %}
   {%- if 'source' in rule %}
-    <source address="{{ rule.source.address }}" {%- if 'invert' in rule.source %}invert="{{ rule.source.invert }}"{%- endif %} />
+    <source address="{{ rule.source.address }}" {%- if 'invert' in rule.source %} invert="{{ rule.source.invert }}"{%- endif %} />
   {%- endif %}
   {%- if 'destination' in rule %}
-    <destination address="{{ rule.destination.address }}" {%- if 'invert' in rule.destination %}invert="{{ rule.destination.invert }}"{%- endif %} />
+    <destination address="{{ rule.destination.address }}" {%- if 'invert' in rule.destination %} invert="{{ rule.destination.invert }}"{%- endif %} />
   {%- endif %}
   {%- if 'service' in rule %}
     <service name="{{ rule.service }}" />
