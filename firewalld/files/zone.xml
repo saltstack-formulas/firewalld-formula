@@ -14,10 +14,10 @@
     <source ipset="{{ rule.ipset.name }}" />
   {%- endif %}
   {%- if 'source' in rule %}
-    <source address="{{ rule.source.address }}" {%- if 'invert' in rule.source %}invert="{{ rule.source.invert }}"{%- endif %} />
+    <source address="{{ rule.source.address }}" {%- if 'invert' in rule.source %} invert="{{ rule.source.invert }}"{%- endif %} />
   {%- endif %}
   {%- if 'destination' in rule %}
-    <destination address="{{ rule.destination.address }}" {%- if 'invert' in rule.destination %}invert="{{ rule.destination.invert }}"{%- endif %} />
+    <destination address="{{ rule.destination.address }}" {%- if 'invert' in rule.destination %} invert="{{ rule.destination.invert }}"{%- endif %} />
   {%- endif %}
   {%- if 'service' in rule %}
     <service name="{{ rule.service }}" />
@@ -63,7 +63,7 @@
     <accept>{%- if rule.accept is mapping and 'limit' in rule.accept %} <limit value="{{ rule.accept.limit }}"/>{%- endif %}</accept>
   {%- endif %}
   {%- if 'reject' in rule %}
-    <reject{%- if 'type' in rule.reject %} type="{{ rule.reject.type }}"{%- endif %} />
+    <reject{%- if rule.reject is mapping and 'type' in rule.reject %} type="{{ rule.reject.type }}"{%- endif %} />
   {%- endif %}
   {%- if 'drop' in rule %}
     <drop/>
