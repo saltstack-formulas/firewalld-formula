@@ -2,6 +2,33 @@
 Changelog
 =========
 
+`1.2.1 <https://github.com/saltstack-formulas/firewalld-formula/compare/v1.2.0...v1.2.1>`_ (2021-04-26)
+-----------------------------------------------------------------------------------------------------------
+
+Bug Fixes
+^^^^^^^^^
+
+
+* **zone.xml:** fix jinja error in rule.reject (\ `194cb99 <https://github.com/saltstack-formulas/firewalld-formula/commit/194cb99f1684bfd0a3ecdf89adc2acd1287d83dd>`_\ )
+* **zone.xml:** fix XML error (\ `88f9fd4 <https://github.com/saltstack-formulas/firewalld-formula/commit/88f9fd4687ebb0845123cadb9974419cf496a1bf>`_\ )
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **gemfile+lock:** use ``ssf`` customised ``kitchen-docker`` repo [skip ci] (\ `a2bcd11 <https://github.com/saltstack-formulas/firewalld-formula/commit/a2bcd11c4ca18bb374cc802c3575b791713b7a04>`_\ )
+* **kitchen+ci:** use latest pre-salted images (after CVE) [skip ci] (\ `98f91c2 <https://github.com/saltstack-formulas/firewalld-formula/commit/98f91c29dff006757b18b3567789ed67435d012a>`_\ )
+* **kitchen+gitlab:** adjust matrix to add ``3003`` [skip ci] (\ `79eb50a <https://github.com/saltstack-formulas/firewalld-formula/commit/79eb50a11aeb630f2732e8e1c1a29c054cb8ed4c>`_\ )
+* **kitchen+gitlab-ci:** use latest pre-salted images [skip ci] (\ `0bb7751 <https://github.com/saltstack-formulas/firewalld-formula/commit/0bb7751957ed1d70cab6a711f9f0bc7b8ce54e3a>`_\ )
+
+Tests
+^^^^^
+
+
+* **_mapdata:** add verification file for ``fedora-34`` [skip ci] (\ `b8e0cb8 <https://github.com/saltstack-formulas/firewalld-formula/commit/b8e0cb8b14367dc22a8c776c4f3255bab674e9a7>`_\ )
+* standardise use of ``share`` suite & ``_mapdata`` state [skip ci] (\ `291adbd <https://github.com/saltstack-formulas/firewalld-formula/commit/291adbd997657f3e34124c887a201c1b99d0a914>`_\ )
+* **_mapdata:** add verification files for new platforms (\ `b9d8775 <https://github.com/saltstack-formulas/firewalld-formula/commit/b9d8775937bc9e533f0e47b384acefce41b80369>`_\ )
+
 `1.2.0 <https://github.com/saltstack-formulas/firewalld-formula/compare/v1.1.2...v1.2.0>`_ (2021-02-05)
 -----------------------------------------------------------------------------------------------------------
 
