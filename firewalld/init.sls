@@ -16,7 +16,7 @@ firewalld-unsupported:
 {% elif firewalld.enabled %}
 
 include:
-  {% if grains['osfinger'] == 'Debian-10' %}
+  {% if grains.get('osfinger', '') == 'Debian-10' %}
   - firewalld.debian10
   {% endif %}
   - firewalld.config
