@@ -1,5 +1,17 @@
 # Changelog
 
+# [1.3.0](https://github.com/saltstack-formulas/firewalld-formula/compare/v1.2.1...v1.3.0) (2021-06-18)
+
+
+### Continuous Integration
+
+* add `arch-master` to matrix and update `.travis.yml` [skip ci] ([cdaade3](https://github.com/saltstack-formulas/firewalld-formula/commit/cdaade380a4f4e42e2e4fe91cd60de1e179c3e0f))
+
+
+### Features
+
+* **rich-rules:** add priority to rich rules ([9c2b41d](https://github.com/saltstack-formulas/firewalld-formula/commit/9c2b41d0f9de3e7601df465db2e1005effcbb0c7)), closes [#51](https://github.com/saltstack-formulas/firewalld-formula/issues/51)
+
 ## [1.2.1](https://github.com/saltstack-formulas/firewalld-formula/compare/v1.2.0...v1.2.1) (2021-04-26)
 
 
