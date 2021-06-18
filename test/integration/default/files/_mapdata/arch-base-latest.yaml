@@ -157,6 +157,13 @@ values:
     rich_public:
       description: Example
       rich_rules:
+        http-priority:
+          accept: true
+          ipsets:
+          - other-ipset
+          priority: 15
+          services:
+          - http
         ssh-csg:
           accept: true
           ipsets:

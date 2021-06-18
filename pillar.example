@@ -167,6 +167,13 @@ firewalld:
       # can be used. Special keys "ipsets" and "services", if defined, take precedence.
       # They will be auto-expanded into separate rich rules per value in the list.
       rich_rules:
+        http-priority:
+          accept: true
+          ipsets:
+            - other-ipset
+          priority: 15
+          services:
+            - http
         ssh-csg:
           accept: true
           ipsets:
