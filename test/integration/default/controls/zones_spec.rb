@@ -63,6 +63,11 @@ control 'zones/rich_public.xml configuration' do
         <zone>
           <short>rich_public</short>
           <description>Example</description>
+          <rule priority="15">
+            <source ipset="other-ipset" />
+            <service name="http" />
+            <accept></accept>
+          </rule>
           <rule>
             <source ipset="fail2ban-ssh" />
             <service name="ssh" />
