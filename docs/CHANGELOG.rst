@@ -2,6 +2,21 @@
 Changelog
 =========
 
+`1.3.1 <https://github.com/saltstack-formulas/firewalld-formula/compare/v1.3.0...v1.3.1>`_ (2021-06-22)
+-----------------------------------------------------------------------------------------------------------
+
+Bug Fixes
+^^^^^^^^^
+
+
+* **debian10 iptables:** install iptables from buster-backports (\ `8d5c0c9 <https://github.com/saltstack-formulas/firewalld-formula/commit/8d5c0c941044b65f275b05f5579d54282943ced7>`_\ )
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **kitchen+gitlab:** remove Ubuntu 16.04 & Fedora 32 (EOL) [skip ci] (\ `70cf9fa <https://github.com/saltstack-formulas/firewalld-formula/commit/70cf9fa8d50ae833020108c5136ad8fddf733d29>`_\ )
+
 `1.3.0 <https://github.com/saltstack-formulas/firewalld-formula/compare/v1.2.1...v1.3.0>`_ (2021-06-18)
 -----------------------------------------------------------------------------------------------------------
 
