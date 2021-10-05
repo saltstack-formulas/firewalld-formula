@@ -1,4 +1,4 @@
-{% from "firewalld/map.jinja" import firewalld with context %}
+{% from "./map.jinja" import firewalld with context %}
 
 firewalld_repo_buster-backports:
   pkgrepo.managed:

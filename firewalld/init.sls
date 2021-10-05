@@ -3,7 +3,7 @@
 #
 # This state installs/runs firewalld.
 #
-{% from "firewalld/map.jinja" import firewalld with context %}
+{% from "./map.jinja" import firewalld with context %}
 
 {% if salt['grains.get']('osfullname') == "SLES" and salt['grains.get']('osmajorrelease')|int < 15 %}
 
@@ -17,14 +17,14 @@ firewalld-unsupported:
 
 include:
   {% if grains.get('osfinger', '') == 'Debian-10' %}
-  - firewalld.debian10
+  - .debian10
   {% endif %}
-  - firewalld.config
-  - firewalld.ipsets
-  - firewalld.backend
-  - firewalld.services
-  - firewalld.zones
-  - firewalld.direct
+  - .config
+  - .ipsets
+  - .backend
+  - .services
+  - .zones
+  - .direct
 
 # iptables service that comes with rhel/centos
 iptables:

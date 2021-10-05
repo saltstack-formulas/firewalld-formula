@@ -2,7 +2,7 @@
 #
 # This state ensures that /etc/firewalld/backends/ exists.
 #
-{% from "firewalld/map.jinja" import firewalld with context %}
+{% from "./map.jinja" import firewalld with context %}
 
 {% set backend_manage = firewalld.backend.manage %}
 {% set backend_pkg = firewalld.backend.pkg %}

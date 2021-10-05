@@ -1,6 +1,6 @@
 # == State: firewalld.direct
 
-{% from "firewalld/map.jinja" import firewalld with context %}
+{% from "./map.jinja" import firewalld with context %}
 
 
 # == Define: firewalld.direct

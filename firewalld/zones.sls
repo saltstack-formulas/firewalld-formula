@@ -2,7 +2,7 @@
 #
 # This state ensures that /etc/firewalld/zones/ exists.
 #
-{% from "firewalld/map.jinja" import firewalld with context %}
+{% from "./map.jinja" import firewalld with context %}
 
 directory_firewalld_zones:
   file.directory:            # make sure this is a directory

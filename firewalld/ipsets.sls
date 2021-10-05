@@ -2,7 +2,7 @@
 #
 # This state ensures that /etc/firewalld/ipsets/ exists.
 #
-{% from "firewalld/map.jinja" import firewalld with context %}
+{% from "./map.jinja" import firewalld with context %}
 
 # Backward compatibility setting and deprecation notices
 {% set ipset_manage = false %}
