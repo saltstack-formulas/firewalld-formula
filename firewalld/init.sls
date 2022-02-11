@@ -50,7 +50,7 @@ service_firewalld:
       - service: ip6tables # ensure it's stopped
 
 reload_firewalld:
-  cmd.wait:
+  cmd.wait:  # noqa: 213
     - name: 'firewall-cmd --reload'
     - require:
       - service: service_firewalld
