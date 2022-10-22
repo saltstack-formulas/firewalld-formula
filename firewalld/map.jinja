@@ -2,11 +2,11 @@
 # vim: ft=jinja
 
 {#- Start with  defaults from defaults.yaml #}
-{% import_yaml "firewalld/defaults.yaml" as default_settings %}
-{% import_yaml "firewalld/osarchmap.yaml" as osarchmap %}
-{% import_yaml "firewalld/osfamilymap.yaml" as osfamilymap %}
-{% import_yaml "firewalld/osmap.yaml" as osmap %}
-{% import_yaml "firewalld/osfingermap.yaml" as osfingermap %}
+{% import_yaml "./defaults.yaml" as default_settings %}
+{% import_yaml "./osarchmap.yaml" as osarchmap %}
+{% import_yaml "./osfamilymap.yaml" as osfamilymap %}
+{% import_yaml "./osmap.yaml" as osmap %}
+{% import_yaml "./osfingermap.yaml" as osfingermap %}
 
 {% set _config = salt['config.get']('firewalld', default={}) %}
 

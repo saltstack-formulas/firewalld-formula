@@ -2,7 +2,7 @@
 #
 # This state ensures that /etc/firewalld/services/ exists.
 #
-{% from "firewalld/map.jinja" import firewalld with context %}
+{% from "./map.jinja" import firewalld with context %}
 
 directory_firewalld_services:
   file.directory:            # make sure this is a directory

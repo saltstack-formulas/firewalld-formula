@@ -2,7 +2,7 @@
 #
 # This state configures firewalld.
 #
-{% from "firewalld/map.jinja" import firewalld with context %}
+{% from "./map.jinja" import firewalld with context %}
 
 directory_firewalld:
   file.directory:            # make sure this is a directory
