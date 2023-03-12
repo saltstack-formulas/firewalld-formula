@@ -182,6 +182,36 @@ firewalld:
           services:
             - ssh
 
+  policies:
+    myOutputPolicy:
+      short: myOutputPolicy
+      target: DROP
+      ingress-zones: ANY
+      egress-zones: HOST
+      description: >-
+        This example, creates a policy that applies to traffic originating from the host
+        running firewalld and is destined to any zone. Or said differently traffic
+        in the OUTPUT chain.
+      services:
+        - http
+        - https
+        - ssh
+      rich_rules:
+        - family: ipv4
+          destination:
+            address: 8.8.8.8
+          port:
+            portid: 53
+            protocol: udp
+          accept: true
+      ports:
+        - comment: salt-master
+          port: 4505
+          protocol: tcp
+        - comment: salt-master
+          port: 4506
+          protocol: tcp
+
   direct:
     chain:
       MYCHAIN:
