@@ -55,6 +55,8 @@ firewalld:
         ipv6:
           - ff02::fb
           - ff02::fc
+      includes:
+        - some_other_existing_service
 
     zabbixcustom:
       short: Zabbixcustom
