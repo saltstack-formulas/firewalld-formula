@@ -56,7 +56,7 @@ firewalld:
           - ff02::fb
           - ff02::fc
       includes:
-        - some_other_existing_service
+        - dhcp
 
     zabbixcustom:
       short: Zabbixcustom
