@@ -3,6 +3,7 @@
 # This state ensures that /etc/firewalld/zones/ exists.
 #
 {% from "firewalld/map.jinja" import firewalld with context %}
+{%- set zones = firewalld.get('zones', {}) %}
 
 directory_firewalld_zones:
   file.directory:            # make sure this is a directory
@@ -21,7 +22,7 @@ directory_firewalld_zones:
 #
 # This defines a zone configuration, see firewalld.zone (5) man page.
 #
-{% for k, v in salt['pillar.get']('firewalld:zones', {}).items() %}
+{% for k, v in zones.items() %}
 {% set z_name = v.name|default(k) %}
 
 /etc/firewalld/zones/{{ z_name }}.xml:
@@ -46,9 +47,10 @@ directory_firewalld_zones:
 {% endfor %}
 
 {%- if firewalld.get('purge_zones', False) %}
+{%- set zone_names = zones.keys() %}
 {%- for file in salt['file.find']('/etc/firewalld/zones', name='*.xml', print='name', type='f') %}
 
-{%- if file.replace('.xml', '') not in firewalld.get('zones', {}).keys() %}
+{%- if file.replace('.xml', '') not in zone_names %}
 /etc/firewalld/zones/{{ file }}:
   file.absent:
     - watch_in:
