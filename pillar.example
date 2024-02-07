@@ -99,6 +99,9 @@ firewalld:
       entries:
         - 2a01::1
 
+  # Delete zones not defined under "zones"
+  purge_zones: False
+
   zones:
     public:
       short: Public

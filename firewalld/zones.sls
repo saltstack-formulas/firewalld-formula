@@ -44,3 +44,16 @@ directory_firewalld_zones:
         zone: {{ v|json }}
 
 {% endfor %}
+
+{%- if firewalld.get('purge_zones', False) %}
+{%- for file in salt['file.find']('/etc/firewalld/zones', name='*.xml', print='name', type='f') %}
+
+{%- if file.replace('.xml', '') not in firewalld.get('zones', {}).keys() %}
+/etc/firewalld/zones/{{ file }}:
+  file.absent:
+    - watch_in:
+      - cmd: reload_firewalld
+{%- endif %}
+
+{%- endfor %}
+{%- endif %}
