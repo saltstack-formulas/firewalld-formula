@@ -84,4 +84,9 @@
   <include service="{{ v }}" />
   {%- endfor %}
 {%- endif %}
+{%- if 'includes' in service %}
+  {%- for v in service.includes %}
+  <include service="{{ v }}" />
+  {%- endfor %}
+{%- endif %}
 </service>
