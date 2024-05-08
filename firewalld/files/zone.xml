@@ -33,6 +33,9 @@
   {%- if 'masquerade' in rule %}
     {%- if rule.masquerade %}<masquerade/>{%- endif %}
   {%- endif %}
+  {%- if 'forward' in rule %}
+    {%- if rule.forward %}<forward/>{%- endif %}
+  {%- endif %}
   {%- if 'forward_port' in rule %}
     {%- if 'comment' in rule.forward_port %}
       <!-- {{ rule.forward_port.comment }} -->
