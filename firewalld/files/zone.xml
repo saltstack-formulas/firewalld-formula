@@ -33,9 +33,6 @@
   {%- if 'masquerade' in rule %}
     {%- if rule.masquerade %}<masquerade/>{%- endif %}
   {%- endif %}
-  {%- if 'forward' in rule %}
-    {%- if rule.forward %}<forward/>{%- endif %}
-  {%- endif %}
   {%- if 'forward_port' in rule %}
     {%- if 'comment' in rule.forward_port %}
       <!-- {{ rule.forward_port.comment }} -->
@@ -138,6 +135,9 @@
     {%- endif %}
   <forward-port port="{{ v.portid }}" protocol="{{ v.protocol }}"{%- if 'to_port' in v %} to-port="{{ v.to_port }}"{%- endif %}{%- if 'to_addr' in v %} to-addr="{{ v.to_addr }}"{%- endif %} />
   {%- endfor %}
+{%- endif %}
+{%- if 'forward' in zone %}
+  {%- if rule.forward %}<forward/>{%- endif %}
 {%- endif %}
 {%- if 'source_ports' in zone %}
   {%- for v in zone.source_ports %}

@@ -112,6 +112,7 @@ values:
         are accepted.
       other_services:
       - zabbixcustom
+      forward: true
       ports:
       - comment: zabbix-agent
         port: 10050
