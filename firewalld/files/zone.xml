@@ -123,6 +123,11 @@
 {%- if 'icmp_block_inversion' in zone and zone.icmp_block_inversion %}
   <icmp-block-inversion />
 {%- endif %}
+{%- if 'forward' in zone %}
+  {%- if zone.forward %}
+  <forward/>
+  {%- endif %}
+{%- endif %}
 {%- if 'masquerade' in zone %}
   {%- if zone.masquerade %}
   <masquerade/>
@@ -135,9 +140,6 @@
     {%- endif %}
   <forward-port port="{{ v.portid }}" protocol="{{ v.protocol }}"{%- if 'to_port' in v %} to-port="{{ v.to_port }}"{%- endif %}{%- if 'to_addr' in v %} to-addr="{{ v.to_addr }}"{%- endif %} />
   {%- endfor %}
-{%- endif %}
-{%- if 'forward' in zone %}
-  {%- if rule.forward %}<forward/>{%- endif %}
 {%- endif %}
 {%- if 'source_ports' in zone %}
   {%- for v in zone.source_ports %}
