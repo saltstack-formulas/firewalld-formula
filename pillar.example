@@ -116,6 +116,7 @@ firewalld:
         - zabbixcustom
       protocols:
         - igmp
+      forward: true
       rich_rules:
         - family: ipv4
           source:
