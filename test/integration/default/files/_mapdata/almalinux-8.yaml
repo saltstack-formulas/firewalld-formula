@@ -99,6 +99,8 @@ values:
       source_ports:
         tcp:
         - 21
+      includes:
+        - dhcp
     zabbixcustom:
       description: zabbix custom rule
       ports:

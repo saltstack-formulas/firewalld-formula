@@ -55,6 +55,8 @@ firewalld:
         ipv6:
           - ff02::fb
           - ff02::fc
+      includes:
+        - dhcp
 
     zabbixcustom:
       short: Zabbixcustom
