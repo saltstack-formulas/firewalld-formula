@@ -123,6 +123,11 @@
 {%- if 'icmp_block_inversion' in zone and zone.icmp_block_inversion %}
   <icmp-block-inversion />
 {%- endif %}
+{%- if 'forward' in zone %}
+  {%- if zone.forward %}
+  <forward/>
+  {%- endif %}
+{%- endif %}
 {%- if 'masquerade' in zone %}
   {%- if zone.masquerade %}
   <masquerade/>
