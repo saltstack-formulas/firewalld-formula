@@ -24,6 +24,7 @@ include:
   - firewalld.backend
   - firewalld.services
   - firewalld.zones
+  - firewalld.policies
   - firewalld.direct
 
 # iptables service that comes with rhel/centos
